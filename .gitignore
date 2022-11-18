@@ -1,1 +1,8 @@
+# Rust Compiler Files
 /target
+
+# IDE Files
+.[Vv]s/
+.[Vv]scode/
+
+# Scripts

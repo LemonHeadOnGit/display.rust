@@ -1,10 +1,10 @@
-//! The CLI interface for displayz
+//! The CLI interface for display.rust (with credits to displayz)
 //!
 //! Use the `--help` flag to see the available options.
 use std::cell::RefMut;
 
 use color_eyre::eyre::{eyre, Result};
-use displayz::{
+use displaydotrust::{
     query_displays, refresh, DisplaySettings, FixedOutput, Orientation, Position, Resolution,
 };
 use structopt::{clap::ArgGroup, StructOpt};
@@ -90,7 +90,7 @@ struct PropertiesOpt {
     fixed_output: Option<FixedOutput>,
 }
 
-/// Entry point for `displayz`.
+/// Entry point for `displaydotrust`.
 fn main() -> Result<()> {
     let _ = color_eyre::install()?;
 

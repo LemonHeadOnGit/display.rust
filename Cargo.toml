@@ -1,13 +1,11 @@
 [package]
-name = "displayz"
-version = "0.1.0"
-authors = ["Michael Lohr <michael@lohr.dev>", "Schuwi <Schuwi@protonmail.ch>"]
-description = "A CLI tool and library to control display settings on Windows written in Rust. "
+name = "displaydotrust"
+version = "0.1.1"
+description = "Retrieve display information from your macOS, Windows, or Linux machine!"
 edition = "2021"
 readme = "README.md"
-repository = "https://github.com/michidk/displayz"
-documentation = "https://github.com/michidk/displayz"
-homepage = "https://github.com/michidk/displayz"
+repository = "https://github.com/LemonHeadOnGit/display.rust"
+homepage = "https://github.com/LemonHeadOnGit/display.rust"
 license = "MIT"
 keywords = ["display", "settings", "cli"]
 categories = ["command-line-utilities", "config"]
@@ -18,4 +16,20 @@ env_logger = "0.9.0"
 log = "0.4.17"
 structopt = "0.3.26"
 thiserror = "1.0.31"
+sysinfo = "0.26.4"
 winsafe = { version = "0.0.10", features = ["user"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-graphics = "0.22.3"
+
+[target.'cfg(target_os="windows")'.dependencies]
+sfhash = "0.1.1"
+widestring = "1.0.2"
+
+[target.'cfg(target_os = "windows")'.dependencies.windows]
+version = "0.39.0"
+features = ["Win32_Foundation", "Win32_Graphics_Gdi"]
+
+[target.'cfg(target_os="linux")'.dependencies.xcb]
+version = "1.1.1"
+features = ["randr"]

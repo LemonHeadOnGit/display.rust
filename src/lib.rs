@@ -2,8 +2,7 @@
 //!
 //! This library provides an abstraction around some `winuser.h` calls relevant for modifying display settings.
 
-mod display;
-mod properties;
+pub mod libs;
 
-pub use display::*;
-pub use properties::*;
+pub use libs::properties;
+pub use libs::display;

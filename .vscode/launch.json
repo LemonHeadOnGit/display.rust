@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'displayz'",
+            "name": "Debug executable 'displaydotrust'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=displayz",
-                    "--package=displayz"
+                    "--bin=displaydotrust",
+                    "--package=displaydotrust"
                 ],
                 "filter": {
-                    "name": "displayz",
+                    "name": "displaydotrust",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'displayz'",
+            "name": "Debug unit tests in executable 'display.rust'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=displayz",
-                    "--package=displayz"
+                    "--bin=displaydotrust",
+                    "--package=displaydotrust"
                 ],
                 "filter": {
-                    "name": "displayz",
+                    "name": "displaydotrust",
                     "kind": "bin"
                 }
             },
